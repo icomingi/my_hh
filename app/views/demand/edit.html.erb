@@ -1,0 +1,17 @@
+<h1>Demand#edit</h1>
+<p>Find me in app/views/demand/edit.html.erb</p>
+<%= form_for @dr, :url => {:action => "update", :id => @dr} do |f| %>
+<p>
+<%= f.label :origin %>
+<%= f.text_field :origin %>
+</p>
+<p>
+<%= f.label :dest %>
+<%= f.text_field :dest %>
+</p>
+<p>
+<%= f.label :departure %>
+<%= f.date_select :departure %>
+</p>
+<%= f.submit "Save Demand" %>
+<% end %>

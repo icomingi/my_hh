@@ -1,0 +1,19 @@
+<h1>People#index</h1>
+<table>
+<% @people.each do |p| %>
+<tr>
+<td><%= p.name %></td>
+<td><%= p.gender %></td>
+<td>
+<span>has been driving </span>
+<% p.vehicles.each do |v|%>
+<%= "#{v.brand} #{v.nameplate} #{v.model_year}, " %>
+<% end %>
+</td>
+<td><%= driving_time(p.license) %></td>
+<td><%= p.birthday %></td>
+<td><%= p.email %></td>
+</tr>
+<% end %>
+</table>
+<p>Find me in app/views/people/index.html.erb</p>

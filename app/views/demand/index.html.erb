@@ -1,0 +1,17 @@
+<h1>Demand#index</h1>
+<p>Find me in app/views/demand/index.html.erb</p>
+<table>
+<thead>
+<tr><th>People</th><th>Origin</th><th>Origin</th><th>O Lat</th><th>O Long</th><th>Destination</th><th>D Lat</th><th>D Long</th><th>Departure Time</th><th></th></tr>
+</thead>
+<% @demands.each do |demand| %>
+	<tr>
+	<td><%= Person.find(demand.person_id).name %></td>
+	<% r = DemandRoute.find(demand.demand_route_id) %>
+	<td><%= r.origin %></td><td><%= r.origin_lat %></td><td><%= r.origin_long %></td>
+	<td><%= r.dest %></td><td><%= r.dest_lat %></td><td><%= r.dest_long %></td>
+	<td><%= r.departure %></td>
+	<td><%= link_to "Edit", edit_demand_path(demand) %></td>
+	</tr>
+<% end %>
+</table>
